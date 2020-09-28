@@ -9,5 +9,7 @@ Challenge: Create a script that will loop through all the stocks for one year an
   - Yearly change from opening price at the beginning of a given year to the closing price at the end of that year.
   - The percent change from opening price at the beggining of a given year to the closing price at the end of that year.
   - The Total stock volume of the stock.
+  - You should also have conditional formatting that will highlight positive change in green and negative change in red.
   
-  You should also have conditional formatting that will highlight positive change in green and negative change in red.
+  1. First I created TEST to test writing and updating files on github.
+  2. I created CHALLENGE to begin solving the problem
