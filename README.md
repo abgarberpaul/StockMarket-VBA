@@ -13,3 +13,16 @@ Challenge: Create a script that will loop through all the stocks for one year an
   
   1. I created TEST to test writing and updating files on github.
   2. I created CHALLENGE to begin solving the problem
+  
+  Challenge:
+    
+    Step 1: Create a script that will loop through all the stocks for one year and output the following information: 
+    - The ticker symbol.
+      a) Code to create a new worksheet
+      b) Code to create a new array in the new worksheet
+          - label columns
+          - conditional formatting (Step 5)
+      c) Code to loop through all stocks on one sheet and output ticker symbol in new array
+      d) Code to to loop through worksheets and perform task c)
+
+   
