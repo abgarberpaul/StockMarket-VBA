@@ -1,0 +1,17 @@
+Sub VBAChallenge():
+    'add a sheet before the first sheet and name it Summary
+    Sheets.Add(Before:=Sheets("A")).Name = "Summary"
+    
+    'label the columns on the Summary sheet
+    Dim i As Long
+    For i = 1 To 4
+        With Cells(1, i)
+            Select Case .Column
+                Case i
+                    .Value = Choose(i, "Sheet", "Ticker Symbol", "Percent Change", "Total Volume")
+            End Select
+        End With
+    Next
+    
+    
+End Sub
