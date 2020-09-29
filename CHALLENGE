@@ -6,16 +6,25 @@ Sub VBAChallenge():
     
     'add Tickers
     Dim LastRow As Long
+   
+    
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
     MsgBox "Last Row: " & LastRow
     Dim Column As Integer
+   
+    Dim Summary_Table_Row As Integer
+    Summary_Table_Row = 2
     Column = 1
     
-    For i = 1 To LastRow
+    For i = 2 To LastRow
         If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
             'add code to write in column I
+
+            Range("I" & Summary_Table_Row).Value = Cells(i, Column).Value
+            Summary_Table_Row = Summary_Table_Row + 1
             
         End If
+        
     Next i
         
     
