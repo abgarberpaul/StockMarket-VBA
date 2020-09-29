@@ -1,9 +1,38 @@
 Sub VBAChallenge():
-    'add a sheet before the first sheet and name it Summary
-    Sheets.Add(Before:=Sheets("A")).Name = "Summary"
     
-    'label the columns on the Summary sheet
-    Range("A1:D1").Value = Array("Sheet", "Ticker Symbol", "Percent Change", "Total Volume")  
+    'label the columns on the sheet
+
+   Range("I1:L1").Value = Array("Ticker Symbol", "Yearly Change", "Percent Change", "Total Stock Volume")
     
+    'add Tickers
+    Dim LastRow As Long
+    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    MsgBox "Last Row: " & LastRow
+    Dim Column As Integer
+    Column = 1
+    
+    For i = 1 To LastRow
+        If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
+            'add code to write in column I
+            
+        End If
+    Next i
+        
+    
+    'add yearly change
+    
+    'add percent change
+    
+    'add total stock volume
+    
+    'add conditional formatting to the array (seeVBA example "grade book")
+    
+    'do it to all the sheets
+    
+    'Challenge: add a new array
+        'Greatest % Increase
+        'Greatest % Decrease
+        'Greatest Total Volume
+    'do it to all sheets
     
 End Sub
