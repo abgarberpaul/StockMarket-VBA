@@ -1,60 +1,49 @@
-Sub VBAChallenge():
-
-    
-    'label the columns on the sheet
-
-    Range("I1:L1").Value = Array("Ticker Symbol", "Yearly Change", "Percent Change", "Total Stock Volume")
-    
-    'add Tickers
-    Dim LastRow As Long
-    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
-    MsgBox "Last Row: " & LastRow
-    
-    Dim Column As Integer
-    Dim Summary_Table_Row As Integer
-    Dim Start_Price As Long
-    Dim End_Price As Long
-    Dim Change_Price As Long
-    
-    Summary_Table_Row = 2
+ummary_Table_Row = 2
     Column = 1
-    Start_Price = Cells(2, 3).Value
+    Open_Price = Cells(2, 3).Value
     
-        For i = 2 To LastRow
+    For i = 2 To LastRow
         If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
         
-            'add code to write Ticker in column I
+            'add code to write ticker in column I
             Range("I" & Summary_Table_Row).Value = Cells(i, Column).Value
             
-        Next i
-        
-        End If
-        
-        For i = 2 To LastRow
-            If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
+            'find your closing price
+            Close_Price = Cells(i, 6).Value
             
-            'find the yearly difference from opening price of a given year to closing price of a given year
-            End_Price = Cells(i, 3).Value
-            Change_Price = End_Price - Start_Price
+            'Find the yearly change
+            Change_Price = Close_Price - Open_Price
             
-            'add code to write Ticker in column J
-            Range("J" & Summary_Table_Row).Value = Change_Pric
+            'add code to write the change in column J
+            Range("J" & Summary_Table_Row).Value = Change_Price
             
-            'Shift recording line down one
+            'Store the next Open Price
+            Open_Price = Cells(i + 1, 3).Value
+            
+            'add code to write on the next line down on the table
             Summary_Table_Row = Summary_Table_Row + 1
             
-            Next i
         End If
-
-    'add percent change
+        
+    Next i
+        
     
+    'add yearly change
+        'start at ln 2 and grab open price
+        'i has close price, next i has next open price
+        
+    'add percent change
+        'based on the same two value used above (open price, close price)
+        '
     'add total stock volume
+        'running total of stock volume/day gives you volume/year
     
     'add conditional formatting to the array (seeVBA example "grade book")
     
     'do it to all the sheets
     
     'Challenge: add a new array
+        'note: will require a loop (session)
         'Greatest % Increase
         'Greatest % Decrease
         'Greatest Total Volume
