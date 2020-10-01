@@ -3,8 +3,9 @@ Sub VBAChallenge():
     'label the columns on the sheet
 
     Range("I1:L1").Value = Array("Ticker Symbol", "Yearly Change", "Percent Change", "Total Stock Volume")
+    Range("J:J").Name = "Yearly_Change_Column"
     
-    'add Tickers
+    'Find the end
     Dim LastRow As Long
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
     MsgBox "Last Row: " & LastRow
@@ -22,13 +23,7 @@ Sub VBAChallenge():
     
     Open_Price = Cells(2, 3).Value
     Stock_Total = Cells(2, 7).Value
-    
-    'add some formatting column K
-    'Name that range! then set conditions on it
-        '1. highlight positive change in green and negative change in red (REQUIRED)
-        '2. format cells 2 places past decimal place (PERSONAL)
-        '3. fit cells to headers (var length in column 1 of table)
-        
+            
     
     For i = 2 To LastRow
         If Cells(i + 1, Column).Value <> Cells(i, Column).Value Then
@@ -57,16 +52,18 @@ Sub VBAChallenge():
             'Print the volume of stock in column L
             Range("L" & Summary_Table_Row).Value = Stock_Total
             
+        'RESET
             'Store the next Open Price
             Open_Price = Cells(i + 1, 3).Value
-
+            
             'Store the next Stock Volume
             Stock_Total = Cells(i + 1, 7).Value
             
-            'add code to write on the next line down on the table
+            'add code to write the next entry on the next line down on the table
             Summary_Table_Row = Summary_Table_Row + 1
-        
+            
         Else
+            
             'keep adding stock volume
             Stock_Volume = Stock_Volume + Cells(i, 7).Value
             
@@ -74,21 +71,52 @@ Sub VBAChallenge():
         
     Next i
     
-   MsgBox ("Finished")
+
+ 'Name that range! then set conditions on it
+           
+    'format cells to fit headers in table
+    Worksheets("A").Columns("I:Z").AutoFit
+      
+'1. highlight positive change in green and negative change in red (REQUIRED)
+    'Add conditional formatting column K
     
-    'DONE add yearly change
+    'Find the last cell to format
+    Dim LastCell As Double
+    Dim Column_Change As Range
+    
+    LastCell = Cells(Rows.Count, 1).End(xlUp).Row
+
+    For i = 2 To LastCell
+        
+        If Cells(i, 11).Value > 0 Then
+            Cells(i, 11).Interior.ColorIndex = 4
+            
+        ElseIf Cells(i, 11).Value < 0 Then
+            Cells(i, 11).Interior.ColorIndex = 3
+        
+        '2. format cells 2 places past decimal place (PERSONAL)
+        
+        '3. fit cells to headers (var length in column 1 of table)
+        End If
+    
+    Next i
+    
+    
+   MsgBox ("Finished")
+   
+       'DONE add yearly change
         'start at ln 2 and grab open price
         'i has close price, next i has next open price
         
     'DONE add percent change
         'based on the same two value used above (open price, close price)
         '
-    'add total stock volume
+    'DONE add total stock volume
         'running total of stock volume/day gives you volume/year
     
-    'add conditional formatting to the array (see VBA example "grade book")
+    'DONE add conditional formatting to the array (see VBA example "grade book")
     
-    'do it to all the sheets
+    'HERE >>>do it to all the sheets
     
     'Challenge: add a new array
         'note: will require a loop (session)
