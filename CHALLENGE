@@ -59,9 +59,13 @@ Sub VBAChallenge():
             
             'Store the next Open Price
             Open_Price = Cells(i + 1, 3).Value
+
+            'Store the next Stock Volume
+            Stock_Total = Cells(i + 1, 7).Value
             
             'add code to write on the next line down on the table
             Summary_Table_Row = Summary_Table_Row + 1
+        
         Else
             'keep adding stock volume
             Stock_Volume = Stock_Volume + Cells(i, 7).Value
