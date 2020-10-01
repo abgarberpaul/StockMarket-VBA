@@ -1,4 +1,22 @@
-ummary_Table_Row = 2
+    Sub VBAChallenge():
+    
+    'label the columns on the sheet
+
+    Range("I1:L1").Value = Array("Ticker Symbol", "Yearly Change", "Percent Change", "Total Stock Volume")
+    
+    'add Tickers
+    Dim LastRow As Long
+    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    MsgBox "Last Row: " & LastRow
+    
+    Dim Column As Integer
+    Dim Summary_Table_Row As Integer
+    Dim Open_Price As Double
+    Dim Close_Price As Double
+    Dim Change_Value As Double
+    Dim Stock_Total As Double
+
+    Summary_Table_Row = 2
     Column = 1
     Open_Price = Cells(2, 3).Value
     
