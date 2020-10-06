@@ -165,7 +165,7 @@ Sub VBAChallenge():
                     Greatest_Total = ws.Cells(i, 12).Value
                     Greatest_Ticker = ws.Cells(i, 9).Value
                     ws.Range("P4").Value = Greatest_Total
-                    ws.Cells(4, 15).Value = Lowest_Ticker
+                    ws.Cells(4, 15).Value = Greatest_Ticker
                 End If
             Next i
             
