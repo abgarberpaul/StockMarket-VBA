@@ -1,5 +1,0 @@
-Sub VBAChallenge():
-
-    MsgBox ("test 2")
-
-End Sub
