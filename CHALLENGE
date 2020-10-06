@@ -75,8 +75,7 @@ Sub VBAChallenge():
                     'add code to write the next entry on the next line down on the table
                     Summary_Table_Row = Summary_Table_Row + 1
                     
-                Else
-                    
+                Else           
                     'keep adding stock volume
                     Stock_Volume = Stock_Volume + ws.Cells(i, 7).Value
                     
@@ -115,7 +114,7 @@ Sub VBAChallenge():
         ws.Range("N3").Value = "Greatest % Decrease"
         ws.Range("N4").Value = "Greatest Total Volume"
                
-        'loop through and compare results for greatest increast, greatest decrease and greatest total volume
+        'loop through and compare results for greatest increase, greatest decrease and greatest total volume
         Dim Highest_Percent As Double
         Dim Lowest_Percent As Double
         Dim Greatest_Total As Double
