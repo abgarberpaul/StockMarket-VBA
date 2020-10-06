@@ -21,7 +21,7 @@ Goal: VBA script analzying real stock market data.
   
   ANSWER:
   1. I created TEST to test writing and updating files on github.
-  2. I created CHALLENGE to begin solving the original problem and then the bonus. My logic is included as the comments inside the code. 
-  3. I uploaded images of the final code as applied to the full data set. 
+  2. I created CHALLENGE to solve the original problem and then the bonus. My logic is included as the comments inside the code. 
+  3. I uploaded images of the final code as applied to the full data set. (PNG files on this repository) 
 
 *Code for this project was written before we linked Github to our local, so code was written directly into github (as opposed to being uploaded).
